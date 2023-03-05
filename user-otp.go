@@ -11,8 +11,8 @@ type UserOtp struct {
 	UserId       *uuid.UUID `gorm:"type:uuid;column:user_id" json:"userId"`
 	User         User       `gorm:"foreignKey:UserId"`
 	Code         string     `gorm:"column:code;" json:"code"`
-	IsUsed       bool       `gorm:"column:is_used;" json:"isUsed"`
-	CheckedCount int16      `gorm:"column:checked_count;" json:"checkedCount"`
+	IsUsed       bool       `gorm:"column:is_used;default:false" json:"isUsed"`
+	CheckedCount int16      `gorm:"column:checked_count;default:0" json:"checkedCount"`
 	OtpType      int16      `gorm:"column:otp_type;default:1" json:"otpType"`
 }
 
