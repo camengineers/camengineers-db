@@ -35,3 +35,43 @@ type platformRegistry struct {
 	iOS     int16
 	Android int16
 }
+
+var OtpType = newOtpTypeRegistry()
+
+func newOtpTypeRegistry() *otpTypeRegistry {
+	return &otpTypeRegistry{
+		SignupRequest: 1,
+		LoginRequest:  2,
+	}
+}
+
+type otpTypeRegistry struct {
+	SignupRequest int32
+	LoginRequest  int32
+}
+
+var UploadUrlType = newUploadUrlTypeRegistry()
+
+func newUploadUrlTypeRegistry() *uploadUrlTypeRegistry {
+	return &uploadUrlTypeRegistry{
+		Default:    1,
+		ProfilePic: 2,
+	}
+}
+
+type uploadUrlTypeRegistry struct {
+	Default    int64
+	ProfilePic int64
+}
+
+var MimeType = newMimeTypeRegistry()
+
+func newMimeTypeRegistry() *mimeTypeRegistry {
+	return &mimeTypeRegistry{
+		PNG: "image/png",
+	}
+}
+
+type mimeTypeRegistry struct {
+	PNG string
+}
