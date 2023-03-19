@@ -7,14 +7,14 @@ var UserRole = newUserRoleRegistry()
 func newUserRoleRegistry() *userRoleRegistry {
 	return &userRoleRegistry{
 		Administrator: 1,
-		Manufacturer:  2,
+		Manager:       2,
 		EndUser:       3,
 	}
 }
 
 type userRoleRegistry struct {
 	Administrator int16
-	Manufacturer  int16
+	Manager       int16
 	EndUser       int16
 }
 
